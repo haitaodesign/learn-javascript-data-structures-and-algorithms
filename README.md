@@ -1,2 +1,3 @@
-# learn-js-data-application
-JavaScript 数据处理以及应用
+# learn-javascript-data-structures-and-algorithms
+
+学习 JS 数据结构与算法
