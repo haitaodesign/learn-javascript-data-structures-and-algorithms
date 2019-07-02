@@ -1,9 +1,11 @@
 var path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entryDir = path.join(__dirname, '/src')
 module.exports = {
   mode: 'development',
+  devtool: 'source-map',
   entry: {
     app: './src/app.js',
     array: './src/array/app.js',
@@ -48,6 +50,12 @@ module.exports = {
       filename: './src/base/index.html',
       template: './src/base/index.html',
       inject: false
-    })
+    }),
+    new webpack.SourceMapDevToolPlugin({
+      filename: '[file].map',
+      include: ['app.js'],
+      exclude: ['vendor.js'],
+      columns: false
+  })
   ]
 }
