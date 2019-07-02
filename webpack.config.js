@@ -14,6 +14,15 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/__build__/'
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      }
+    ]
+  },
   resolve: {
     extensions: ['.js']
   },
