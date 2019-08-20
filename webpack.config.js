@@ -9,7 +9,8 @@ module.exports = {
   entry: {
     app: './src/app.js',
     array: './src/array/app.js',
-    base: './src/base/app.js'
+    base: './src/base/app.js',
+    stack: './src/stack/app.js'
   },
   output: {
     path: path.join(entryDir, '__build__'),
@@ -49,6 +50,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './src/base/index.html',
       template: './src/base/index.html',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: './src/stack/index.html',
+      template: './src/stack/index.html',
       inject: false
     }),
     new webpack.SourceMapDevToolPlugin({
