@@ -1,5 +1,6 @@
 import StackArray from './StackArray'
 import StackObject from './StackObject'
+import StackWeakMap from './StackWeakMap'
 
 //  基于数组的 Stack 类
 let stackArray = new StackArray()
@@ -49,3 +50,16 @@ stackObject.pop()
 stackObject.pop()
 
 console.log(stackObject.size())
+
+// 使用 WeakMap 实现 Stack 类
+// 虽然实现 items 为私有属性，但是扩展时，不能继承私有属性并且可读性不强
+let stackWeakMap = new StackWeakMap()
+
+console.log(stackWeakMap)
+stackWeakMap.push(5)
+
+console.log(stackWeakMap.peek())
+
+stackWeakMap.clear()
+
+console.log(stackWeakMap.peek())
