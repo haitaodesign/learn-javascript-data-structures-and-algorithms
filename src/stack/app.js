@@ -1,5 +1,25 @@
-import Stack from './Stack'
+import StackArray from './StackArray'
 
-let stack = new Stack()
+let stackArray = new StackArray()
 
-console.log(stack)
+console.log(stackArray)
+
+console.log(stackArray.isEmpty())
+
+stackArray.push(5)
+stackArray.push(8)
+
+stackArray.push(11)
+
+console.log(stackArray.size())
+
+console.log(stackArray.peek())
+
+console.log(stackArray.isEmpty())
+
+stackArray.push(15)
+
+stackArray.pop()
+stackArray.pop()
+
+console.log(stackArray.size())
