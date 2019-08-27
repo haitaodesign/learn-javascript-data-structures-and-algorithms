@@ -40,7 +40,7 @@ class Queue {
       return ''
     }
     let objString = `${this.items[this.lowestCount]}`
-    for (let i = this.lowestCount; i < this.count; i++) {
+    for (let i = this.lowestCount + 1; i < this.count; i++) {
       objString = `${objString},${this.items[i]}`
     }
     return objString
