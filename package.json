@@ -1,10 +1,10 @@
 {
   "name": "learn-javascript-data-structures-and-algorithms",
-  "version": "1.0.0",
-  "description": "JavaScript 数据处理以及应用",
+  "version": "0.0.1",
+  "description": "JavaScript数据结构与算法",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,20 @@
   "bugs": {
     "url": "https://github.com/haitaodesign/Learn-JavaScript-Data-Structures-and-Algorithms/issues"
   },
-  "homepage": "https://github.com/haitaodesign/Learn-JavaScript-Data-Structures-and-Algorithms#readme"
+  "homepage": "https://github.com/haitaodesign/Learn-JavaScript-Data-Structures-and-Algorithms#readme",
+  "devDependencies": {
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "eslint": "5.16.0"
+  }
 }
