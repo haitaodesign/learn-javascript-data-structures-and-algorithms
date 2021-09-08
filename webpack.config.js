@@ -2,7 +2,7 @@ var path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const entryDir = path.join(__dirname, '/src')
+const entryDir = path.join(__dirname, '/')
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
@@ -13,9 +13,10 @@ module.exports = {
     stack: './src/stack/app.js'
   },
   output: {
+    clean: true,
     path: path.join(entryDir, '__build__'),
     filename: '[name].js',
-    publicPath: '/__build__/'
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -30,30 +31,30 @@ module.exports = {
     extensions: ['.js']
   },
   devServer: {
-    contentBase: path.join(__dirname, '__build__'),
+    static: {
+      directory: path.join(__dirname, '__build__')
+    },
     compress: true,
-    port: 9000,
-    open: true,
-    openPage: '__build__/src/index.html'
+    port: 9000
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: './src/index.html',
+      filename: './index.html',
       template: './src/index.html',
       inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: './src/array/index.html',
+      filename: './array/index.html',
       template: './src/array/index.html',
       inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: './src/base/index.html',
+      filename: './base/index.html',
       template: './src/base/index.html',
       inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: './src/stack/index.html',
+      filename: './stack/index.html',
       template: './src/stack/index.html',
       inject: false
     }),
@@ -62,6 +63,6 @@ module.exports = {
       include: ['app.js'],
       exclude: ['vendor.js'],
       columns: false
-  })
+    })
   ]
 }
