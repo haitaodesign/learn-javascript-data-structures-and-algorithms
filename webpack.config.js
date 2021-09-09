@@ -41,7 +41,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './src/index.html',
-      inject: false
+      inject: true
     }),
     new HtmlWebpackPlugin({
       filename: './array/index.html',
