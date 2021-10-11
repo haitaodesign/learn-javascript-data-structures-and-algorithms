@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack",
+    "create-dir": "node packages/cli/index.js",
     "lint:fix": "eslint --fix"
   },
   "repository": {
