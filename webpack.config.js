@@ -10,7 +10,8 @@ module.exports = {
     app: './src/app.js',
     array: './src/array/app.js',
     base: './src/base/app.js',
-    stack: './src/stack/app.js'
+    stack: './src/stack/app.js',
+    queue: './src/queue/app.js'
   },
   output: {
     clean: true,
@@ -41,7 +42,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './src/index.html',
-      inject: true
+      inject: false
     }),
     new HtmlWebpackPlugin({
       filename: './array/index.html',
@@ -56,6 +57,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './stack/index.html',
       template: './src/stack/index.html',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: './queue/index.html',
+      template: './src/queue/index.html',
       inject: false
     }),
     new webpack.SourceMapDevToolPlugin({
