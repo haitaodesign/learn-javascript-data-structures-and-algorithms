@@ -1,4 +1,3 @@
-console.log('cli')
 // 创建项目步骤
 // 1. 获取项目名
 // 2. 读取渲染模板
@@ -11,3 +10,23 @@ console.log('cli')
 // 5. 支持js,ts
 // 文档模式
 // 1. 如何自动化加载 md 格式的文档
+
+const { program } = require('commander')
+const fs = require('fs-extra')
+
+program.option('-n, --name <type>', '创建项目的名称').parse()
+
+function init () {
+  const { name } = program.opts()
+  if (name) {
+    // 复制文件到指定目录
+    createProject(name)
+  }
+}
+
+function createProject (name) {
+  const currentDir = process.cwd()
+  fs.copySync(`${currentDir}/packages/cli/template`, `${currentDir}/src/${name}`)
+}
+
+init()
